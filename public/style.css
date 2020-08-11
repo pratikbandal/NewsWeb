@@ -1,0 +1,186 @@
+.search-box {
+    margin-left: 20px;
+    margin-right: 20px;
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-box:hover > .search-txt {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-btn {
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 20px;
+    width: 0px;
+}
+
+.resize {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.loader {
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Loader circles */
+.loader > span {
+  background: blue;
+  border-radius: 50%;
+  margin: 5rem 0.5rem;
+  animation: bouncingLoader 0.6s infinite alternate;
+}
+
+.loader > span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader > span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Define the animation called bouncingLoader. */
+@keyframes bouncingLoader {
+  from {
+    width: 0.1rem;
+    height: 0.1rem;
+    opacity: 1;
+    transform: translate3d(0);
+  }
+  to {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.1;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
+
+#logo{
+  max-width: 40px;
+  max-height: 50px;
+  border-radius: 5px;
+}
+
+
+#data {
+  padding: 5px;
+
+}
+
+
+@media only screen and (max-width: 800px) {
+  .search-box {
+    position: relative;
+    top: 10px;
+  }
+
+  .mt-4 {
+    margin-top: 25px;
+  }
+
+  .ml-3 {
+    margin-left: 0px;
+  }
+
+  .mr-4 {
+    margin-right: 0px;
+  }
+
+  .w-2\/4 {
+    width: 90%;
+    height: 260px;
+  }
+
+  .spacing {
+    margin-right: 10px;
+  }
+
+  #font {
+    font-weight: bold;
+  }
+
+  .containerFeedback {
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+}
+@media screen and (max-width: 1920px) and (min-width: 800px) {
+  #data {
+    width: 500px;
+    height: 200px;
+  }
+
+  .containerFeedback {
+    margin-left: 25%;
+    width: 50%;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  #end {
+    display: none;
+  }
+}
+
+
+/* Feedback form */
+#fname, #lname, #country, #subject, #email{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+
+#submit{
+  background-color: #988bd3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #604ead;
+}
+
+
+
+
+
