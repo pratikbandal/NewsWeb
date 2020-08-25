@@ -1,6 +1,7 @@
 import React from 'react'
 
 class Technology extends React.Component {
+    _isMounted = false
     constructor() {
         super()
         this.state = {
@@ -9,11 +10,20 @@ class Technology extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://api.currentsapi.services/v1/latest-news?category=technology&apiKey=09tlLmAwWRqqBBmOTFRzaKhqkA4nhnIUiZ9bBiFLtHYNLkOJ')
+        this._isMounted= true
+        fetch('https://api.currentsapi.services/v1/search?category=technology&apiKey=qaMs8GfnbbHTFnRoe_pI8J4wmuNJmwAR1-EV0Tipj6ER612w')
             .then((response) => response.json())
-            .then((response) => this.setState({
-                source : response.news
-            }))
+            .then((response) => {
+                if (this._isMounted) {
+                    this.setState({
+                        source : response.news
+                    })
+                }
+            })
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false
     }
 
     render() {

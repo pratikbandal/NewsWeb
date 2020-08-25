@@ -1,6 +1,7 @@
 import React from 'react'
 
 class Science extends React.Component {
+    _isMounted = false
     constructor() {
         super()
         this.state = {
@@ -9,11 +10,20 @@ class Science extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://api.currentsapi.services/v1/latest-news?category=science&apiKey=09tlLmAwWRqqBBmOTFRzaKhqkA4nhnIUiZ9bBiFLtHYNLkOJ')
+        this._isMounted= true
+        fetch('https://api.currentsapi.services/v1/search?category=science&apiKey=qaMs8GfnbbHTFnRoe_pI8J4wmuNJmwAR1-EV0Tipj6ER612w')
             .then((response) => response.json())
-            .then((response) => this.setState({
-                source : response.news
-            }))
+            .then((response) => {
+                if (this._isMounted) {
+                    this.setState({
+                        source : response.news
+                    })
+                }
+            })
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false
     }
 
     render() {
@@ -25,7 +35,7 @@ class Science extends React.Component {
                         <div className="container px-5 py-24 mx-auto flex flex-col">
                             <div className="lg:w-4/6 mx-auto">
                                 <div className="rounded-lg h-64 overflow-hidden">
-                                    <img alt="content" className="object-cover object-center h-full w-full resize" src={data.image}/>
+                                    <img alt="Problem?" className="object-cover object-center h-full w-full resize" src={data.image}/>
                                 </div>
                                 <div className="flex flex-col sm:flex-row mt-10">
                                     <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">

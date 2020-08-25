@@ -18,7 +18,6 @@ class Covidtracker extends React.Component {
     }
 
     handleCountryChange(country) {
-        console.log(country)
         if(country) {
         fetch('https://covid19.mathdro.id/api/countries/'+country+'')
             .then(response => response.json())
