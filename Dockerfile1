@@ -1,0 +1,5 @@
+FROM ubuntu:18.04.6
+RUN apt-get update && apt-get install nodejs
+RUN npm install
+COPY to-be-copied
+ENTRYPOINT npm start
